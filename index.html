@@ -321,6 +321,22 @@
       font-weight: 600;
       color: var(--dark);
     }
+    .btn-download {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 14px;
+  background-color: #f36c9c;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-download:hover {
+  background-color: #c43c70;
+}
 
     /* Skills Section */
     #skills {
@@ -658,7 +674,7 @@
 }
 
     /* Contact Section */
-    #contact {
+    /* #contact {
       background: var(--white);
     }
 
@@ -724,7 +740,114 @@
     .contact-social a:hover {
       background: var(--primary-dark);
       transform: translateY(-5px);
-    }
+    } */
+
+  .contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+  }
+
+  .contact-info, .message-form {
+    flex: 1;
+    min-width: 320px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+
+  .contact-details {
+    margin-top: 20px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0;
+    font-size: 16px;
+  }
+
+  .contact-item i {
+    color: #1735f6;
+  }
+
+  .contact-social {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .contact-social a {
+    font-size: 26px;
+    color: #444;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .contact-social a:hover {
+    color: #4d4df7;
+    transform: scale(1.2);
+  }
+
+  .btn-download {
+    display: inline-block;
+    padding: 8px 14px;
+    background-color: #4646fd;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-download:hover {
+    background-color: #6b47fe;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input, textarea {
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    font-family: inherit;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  button {
+    padding: 12px;
+    background-color: #5823f8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #313ffa;
+  }
+
+
+
+
 
     /* Footer */
     footer {
@@ -966,19 +1089,16 @@
         <div class="about-text">
           <h3>Profile Summary</h3>
           <p>Eager to grow in the IT field by contributing to real-time projects and learning new technologies. Skilled in frontend and databases, currently exploring backend to become a full stack developer. Passionate about building practical, user-focused solutions.</p>
-          <div class="about-info">
-            <div class="info-item">
-              <p><span>My Hobbies:</span><br> Reading Books<br> Listening to Music<br> Playing Shuttle</p>
-            </div>
-            <div class="info-item">
-              <p><span>Languages Known:</span><br> Telugu (Fluent)<br> English (Fluent)<br> Hindi (Basic)</p>
-            </div>
+            <p>
+             Want to know more about my skills and experience? Download my resume below.
+            </p>
+            <a href="resume.pdf" class="btn-download" download>📄 Download Resume</a>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- skills section -->
+
   <section id="skills"  style="background-color: rgb(250, 242, 233);">
     <div class="container">
       <div class="section-title">
@@ -1132,16 +1252,20 @@
           <a href="Gittraining.jpg" class="btn" target="_blank">View Certificate</a>
         </div> -->
         <div class="certificate-card">
-          <h3>Cybersecurity Virtual Internship </h3>
-          <a href="cybersecurity.png" class="btn" target="_blank">View Certificate</a>
+          <h3> MongoDB Badge </h3>
+          <a href="MongoDBbadge.png" class="btn" target="_blank">View Badge</a>
         </div>
         <div class="certificate-card">
-          <h3> Artificial Intelligence Internship </h3>
-          <a href="artificialintelligence.png" class="btn" target="_blank">View Certificate</a>
+          <h3> SmartBridge Internship </h3>
+          <a href="SmartBridgeCertificate.png" class="btn" target="_blank">View Certificate</a>
         </div>
         <div class="certificate-card">
-          <h3> Internet of Things Internship </h3>
-          <a href="internetofthings.png" class="btn" target="_blank">View Certificate</a>
+          <h3> Python Internship </h3>
+          <a href="pythoninternship.png" class="btn" target="_blank">View Certificate</a>
+        </div>
+        <div class="certificate-card">
+          <h3> Python Certification </h3>
+          <a href="python.png" class="btn" target="_blank">View Certificate</a>
         </div>
         <!-- <div class="certificate-card">
           <h3> Blockchain Technology Workshop </h3>
@@ -1162,39 +1286,65 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact" style="background-color: rgb(250, 242, 233);">
-    <div class="container">
-      <div class="section-title">
-        <h2>Contact <span>Me</span></h2>
-      </div>
-      <div class="contact-container">
-        <div class="contact-info">
-          <h3>Get in Touch</h3>
-          <p>Feel free to reach out for collaborations! I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.</p>
-          <div class="contact-details">
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <p>vadapallipranathi@gmail.com</p>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <p>+91 9347926869</p>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <p>Tanuku, Andhra Pradesh, India</p>
-            </div>
+<!-- Contact Section -->
+<section id="contact" class="contact" style="background-color: rgb(250, 242, 233); padding: 60px 0;">
+  <div class="container">
+    <div class="section-title" style="text-align: center; margin-bottom: 40px;">
+      <h2 style="font-size: 32px; color: #333;">Contact <span style="color: #1940ed;">Me</span></h2>
+    </div>
+
+    <div class="contact-container">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h3 style="color: #333;">Get in Touch</h3>
+        <p style="margin-bottom: 20px;">
+          Feel free to reach out for collaborations! I’m open to discussing new projects or ideas.
+        </p>
+
+        <div class="contact-details">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <p>vadapallipranathi@gmail.com</p>
           </div>
-          <div class="contact-social">
-            <a href="https://github.com/pranu5612" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/pranathi-vadapalli-9173132ba" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.hackerrank.com/profile/pranathi_vadapa1" target="_blank"><i class="fab fa-hackerrank"></i></a>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <p>+91 9347926869</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Tanuku, Andhra Pradesh, India</p>
           </div>
         </div>
+
+        <div class="contact-social" style="text-align: center; margin-top: 30px;">
+          <a href="https://github.com/pranu5612" target="_blank" title="GitHub" style="margin: 0 12px; font-size: 24px; color: #333;">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/pranathi-vadapalli-9173132ba" target="_blank" title="LinkedIn" style="margin: 0 12px; font-size: 24px; color: #0077b5;">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://leetcode.com/u/pranu56" target="_blank" title="LeetCode" style="margin: 0 12px; font-size: 24px; color: #F89F1B;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="26" height="26" fill="currentColor">
+              <path d="M22.07 24.02l-7.82-7.82 2.84-2.84 10.66 10.66-10.66 10.66-2.84-2.84 7.82-7.82z" fill="#F89F1B"/>
+              <path d="M33.88 6.6l-3.53 3.53A14.03 14.03 0 0129.8 38l3.53 3.53A18.03 18.03 0 0033.88 6.6z" fill="#111"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Message Form -->
+      <div class="message-form">
+        <h3 style="color: #0e0d0d;">Message Me</h3>
+        <form action="https://formspree.io/f/yourformid" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Footer -->
   <!-- <footer>
