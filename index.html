@@ -26,6 +26,38 @@
     html {
       scroll-behavior: smooth;
     }
+   /* Wave animation (stops after 3s like typing) */
+.wave {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: wave 1.3s ease-in-out 3; /* runs 3 times then stops */
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  15% { transform: rotate(14deg); }
+  30% { transform: rotate(-8deg); }
+  45% { transform: rotate(14deg); }
+  60% { transform: rotate(-4deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Typing effect without cursor */
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 3s steps(35, end) forwards;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to   { width: 35ch; } /* adjust based on your text length */
+}
+
+
 
     body {
       font-family: 'Poppins', sans-serif;
@@ -1061,9 +1093,11 @@
     <div class="container">
       <div class="hero-content">
         <div class="hero-text">
-          <h3>👋 Hello there! I'm</h3>
+          <h3 class="intro">
+  <span class="typewriter">👋Hello there! I'm</span></h3>
+
           <h1 style="color: #f9fbfd;">Vadapalli Naga Pranathi</h1>
-          <h2 style="font-size:large; color:#e7e4e4;">Frontend Developer | Python Programmer | Cloud Enthusiast</h2>
+          <h2 style="font-size:large; color:#e7e4e4;">Frontend Developer | Python Programmer | Content Creator | GenAI Enthusiast</h2>
           <p style="color: #f1f0f0a2;">I create beautiful, responsive websites with Frontend technologies. Passionate about building intuitive user experiences with clean, efficient code.</p>
           <div class="hero-buttons">
             <a href="#projects" class="btn btn-outline">View My Work</a>
@@ -1093,7 +1127,7 @@
             <p>
              Want to know more about my skills and experience? Download my resume below.
             </p>
-            <a href="PranathiResume.pdf" class="btn-download" download>📄 Download Resume</a>
+            <a href="VadapalliResume.pdf" class="btn-download" download>📄 Download Resume</a>
           </div>
         </div>
       </div>
@@ -1116,11 +1150,11 @@
           </div>
           <div class="skill-item">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
-            <span>HTML5</span>
+            <span>HTML</span>
           </div>
           <div class="skill-item">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
-            <span>CSS3</span>
+            <span>CSS</span>
           </div>
           <div class="skill-item">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
@@ -1135,9 +1169,9 @@
             <span>MongoDB</span>
           </div>
           <div class="skill-item">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
-            <span>MySQL</span>
-          </div>
+  <img src="https://img.icons8.com/ios-filled/100/000000/database.png" alt="SQL">
+  <span>SQL</span>
+</div>
         </div>
         
         <h3 class="soft-skills-title">Soft Skills</h3>
@@ -1164,7 +1198,7 @@
           <div class="education-content">
             <h4>B.Tech, CIC</h4>
             <p>SASI Institute of Technology and Engineering, Tadepalligudem</p>
-            <p class="year">2022-2026 | CGPA: 8.29</p>
+            <p class="year">2022-2026 | CGPA: 8.3</p>
           </div>
         </div>
         <div class="education-item">
@@ -1233,59 +1267,82 @@
     </div>
   </section>
 
-  <!-- Certifications Section -->
-  <section id="achievements" class="achievements" style="background-color: rgb(250, 242, 233);">
-    <div class="container">
-      <div class="section-title">
+  <!-- Achievements Section -->
+<section id="achievements" class="achievements" style="background-color: rgb(250, 242, 233);">
+  <div class="container">
+    <div class="section-title">
       <h2>My <span>Achievements</span></h2>
+    </div>
+
+    <!-- Hackathons -->
+    <h2 style="text-align:center; margin-bottom:20px;">🏆 Hackathons</h2>
+    <div class="achievements-grid">
+      <div class="certificate-card">
+        <h3>Smart India Hackathon 2024</h3>
+        <p>Phase 1 Finalist – Sasi Institute of Technology and Engineering</p>
       </div>
-      <div class="achievements-grid">
-        <!-- <div class="certificate-card">
-          <h3> MongoDB Tutotials </h3>
-          <a href="Mongodb.png" class="btn" target="_blank">View Certificate</a>
-        </div> -->
-        <div class="certificate-card">
-          <h3> React JS </h3>
-          <a href="react.jpg" class="btn" target="_blank">View Certificate</a>
-        </div>
-        <!-- <div class="certificate-card">
-          <h3>Git Training Course </h3>
-          <a href="Gittraining.jpg" class="btn" target="_blank">View Certificate</a>
-        </div> -->
-        <div class="certificate-card">
-          <h3> MongoDB Badge </h3>
-          <a href="MongoDBbadge.png" class="btn" target="_blank">View Badge</a>
-        </div>
-        <div class="certificate-card">
-          <h3> SmartBridge Internship </h3>
-          <a href="SmartBridgeCertificate.png" class="btn" target="_blank">View Certificate</a>
-        </div>
-        <div class="certificate-card">
-          <h3> Python Internship </h3>
-          <a href="pythoninternship.png" class="btn" target="_blank">View Certificate</a>
-        </div>
-        <div class="certificate-card">
-          <h3> Python Certification </h3>
-          <a href="python.png" class="btn" target="_blank">View Certificate</a>
-        </div>
-        <!-- <div class="certificate-card">
-          <h3> Blockchain Technology Workshop </h3>
-          <a href="BCTworkshop.png" class="btn" target="_blank">View Certificate</a>
-        </div>
-        <div class="certificate-card">
-          <h3> Internet of Things(IoT) <br> Workshop</h3>
-          <a href="iot workshop certificate.jpg" class="btn" target="_blank">View Certificate</a>
-        </div> -->
-        <div class="certificate-card">
-          <h3> Web Development and Designing Internship </h3>
-          <div class="certificate-buttons-row">
+      <div class="certificate-card">
+        <h3>Inspira 2.0 Hackathon</h3>
+        <p>Participation in innovation-driven hackathon organized by SITE & NITAP</p>
+        <a href="Hakathonforgeinspira.png" class="btn" target="_blank">View Certificate</a>
+      </div>
+    </div>
+
+    <!-- Workshops -->
+    <h2 style="text-align:center; margin:40px 0 20px;">📚 Workshops</h2>
+    <div class="achievements-grid">
+      <div class="certificate-card">
+        <h3>Generative AI Workshop</h3>
+        <a href="GenAIworkshop.png" class="btn" target="_blank">View Certificate</a>
+      </div>
+      <div class="certificate-card">
+        <h3>AWS Workshop</h3>
+        <a href="AWSworkshop.png" class="btn" target="_blank">View Certificate</a>
+      </div>
+      <div class="certificate-card">
+        <h3>IOT & Machine Learning Workshop</h3>
+        <a href="iot workshop certificate.jpg" class="btn" target="_blank">View Certificate</a>
+      </div>
+    </div>
+
+
+    <!-- Certifications -->
+    <h2 style="text-align:center; margin:40px 0 20px;">📜 Certifications</h2>
+    <div class="achievements-grid">
+      <div class="certificate-card">
+        <h3>React JS</h3>
+        <a href="react.jpg" class="btn" target="_blank">View Certificate</a>
+      </div>
+      <div class="certificate-card">
+        <h3>MongoDB Badge</h3>
+        <a href="MongoDBbadge.png" class="btn" target="_blank">View Badge</a>
+      </div>
+      <div class="certificate-card">
+        <h3>Python Certification</h3>
+        <a href="python.png" class="btn" target="_blank">View Certificate</a>
+      </div>
+    </div>
+    <h2 style="text-align:center; margin:40px 0 20px;">🧑‍💻Internships</h2>
+    <div class="achievements-grid">
+      <div class="certificate-card">
+        <h3>Python Internship</h3>
+        <a href="pythoninternship.png" class="btn" target="_blank">View Certificate</a>
+      </div>
+      <div class="certificate-card">
+        <h3>SmartBridge Internship</h3>
+        <a href="SmartBridgeCertificate.png" class="btn" target="_blank">View Certificate</a>
+      </div>
+      <div class="certificate-card">
+        <h3>Web Development & Designing Internship</h3>
+        <div class="certificate-buttons-row">
           <a href="OASIScompletion.png" class="btn" target="_blank">Completion Certificate</a>
           <a href="OASISappreciation.png" class="btn" target="_blank">Appreciation Certificate</a>
-          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
 <!-- Contact Section -->
 <section id="contact" class="contact" style="background-color: rgb(250, 242, 233); padding: 60px 0;">
@@ -1293,6 +1350,24 @@
     <div class="section-title" style="text-align: center; margin-bottom: 40px;">
       <h2 style="font-size: 32px; color: #333;">Contact <span style="color: #1940ed;">Me</span></h2>
     </div>
+
+    <!-- YouTube Channel Section -->
+<section id="youtube" style="background:#faf2e9; padding:60px 0;">
+  <div class="container" style="text-align:center;">
+    <h2 style="font-size:2rem; margin-bottom:20px;">
+      📺 Join Our <span style="color:#6c63ff;">YouTube Channel</span>
+    </h2>
+    <p style="max-width:600px; margin:0 auto 30px; color:#555;">
+      Subscribe for AI tools, project walkthroughs, and tech tips.
+    </p>
+    <a href="https://www.youtube.com/@unlockyourselfwithtech" 
+   target="_blank" 
+   class="btn">
+   👉 Visit & Subscribe
+</a>
+  </div>
+</section>
+
 
     <div class="contact-container">
       <!-- Contact Info -->
