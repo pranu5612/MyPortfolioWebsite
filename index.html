@@ -297,6 +297,21 @@
   border-radius: 50%; /* Changed from 20px to 50% for circle */
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
+
+#typewriter {
+  border-right: 2px solid #ff80ab;
+  padding-right: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blink 0.7s infinite;
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+#hero img:hover {
+  transform: scale(1.05);
+}
+
     /* About Section */
     #about {
       background: var(--white);
@@ -365,6 +380,7 @@
   font-weight: 600;
   transition: background-color 0.3s ease;
 }
+
 
 .btn-download:hover {
   background-color: #c43c70;
@@ -447,29 +463,18 @@
     font-weight: 600;
     color: var(--dark-color);
 }
-
-/* Soft Skills */
-.soft-skills-title {
-    margin-top: 50px;
-    margin-bottom: 20px;
+.skill-card {
+  transition: all 0.4s ease;
+  cursor: pointer;
 }
 
-.soft-skills {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    max-width: 800px;
-    margin: 0 auto;
+.skill-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(63, 81, 181, 0.3);
 }
 
-.soft-skill-item {
-    background-color: var(--light-color);
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-weight: 500;
-    box-shadow: var(--box-shadow);
-}
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -592,70 +597,113 @@
       font-weight: 600;
       color: var(--dark);
     }
+    .education-item div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
 
     /* Projects Section */
-    #projects {
-      background: var(--white);
-    }
+  #projects {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+    font-family: 'Arial', sans-serif;
+  }
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
+  #projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #0277bd;
+    font-weight: bold;
+  }
 
-    .project-card {
-      background: var(--white);
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: var(--box-shadow);
-      transition: var(--transition);
-    }
+  .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
 
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    }
+  .project-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 320px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
 
-    .project-img {
-      height: 200px;
-      overflow: hidden;
-    }
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+  }
 
-    .project-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: var(--transition);
-    }
+  .project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
 
-    .project-card:hover .project-img img {
-      transform: scale(1.1);
-    }
+  .project-content {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-    .project-info {
-      padding: 20px;
-    }
+  .project-card h3 {
+    color: #01579b;
+    margin: 10px 0;
+    font-size: 1.4rem;
+  }
 
-    .project-info h3 {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-    }
+  .project-card p {
+    font-size: 0.95rem;
+    color: #003344;
+    margin-bottom: 15px;
+  }
 
-    .project-info p {
-      color: var(--gray);
-      margin-bottom: 15px;
-    }
+  .tech-stack {
+    margin-bottom: 15px;
+  }
 
-    .project-links {
-      display: flex;
-      gap: 10px;
-    }
+  .tech-stack span {
+    display: inline-block;
+    background:  rgb(248, 105, 146);
+    color: rgb(248, 244, 245);
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 2px;
+    font-size: 0.8rem;
+  }
 
-    .project-links a {
-      font-size: 0.9rem;
-    }
+  .btn.click {
+    padding: 8px 20px;
+    border-radius: 8px;
+    background: rgb(73, 82, 250);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+    align-self: flex-start;
+  }
 
+  .btn.click:hover {
+    background: #00838f;
+  }
+
+  @media screen and (max-width: 950px) {
+    .projects-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+<style>
     /* Achievements Section */
     #achievements {
       background: var(--light);
@@ -1089,27 +1137,37 @@
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h3 class="intro">
-  <span class="typewriter">👋Hello there! I'm</span></h3>
+<section id="hero" style="background: linear-gradient(135deg, #8a0168, #a8027f); color: white; font-family: 'Poppins', sans-serif; padding: 120px 0;">
+  <div style="max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 50px; padding: 0 25px;">
 
-          <h1 style="color: #f9fbfd;">Vadapalli Naga Pranathi</h1>
-          <h2 style="font-size:large; color:#e7e4e4;">Frontend Developer | Python Programmer | Content Creator | GenAI Enthusiast</h2>
-          <p style="color: #f1f0f0a2;">I create beautiful, responsive websites with Frontend technologies. Passionate about building intuitive user experiences with clean, efficient code.</p>
-          <div class="hero-buttons">
-            <a href="#projects" class="btn btn-outline">View My Work</a>
-            <a href="#contact" class="btn btn-outline">Contact Me</a>
-          </div>
-        </div>
-        <div class="hero-image">
-          <img src="profile.jpg" alt="Pranathi">
-        </div>
+    <!-- Left Content -->
+    <div style="flex: 1; min-width: 200px; text-align: left;">
+      <h2 style="font-size: 1.5rem; margin-bottom: 10px;">👋 Hello there! I'm</h2>
+      <h1 style="font-size: 2.8rem; font-weight: 700; color: #fff;">Vadapalli Naga Pranathi</h1>
+
+      <h2 style="font-size: 1.3rem; color:#e7e4e4; margin-top: 15px;">
+        <span id="typewriter"></span>
+      </h2>
+
+      <p style="color: #f1f0f0b8; margin-top: 20px; font-size: 1rem; line-height: 1.6;">
+        I’m passionate about combining <b>technology</b> and <b>creativity</b> — from designing interactive web experiences 
+        to crafting engaging digital content powered by <b>AI</b>. I believe great stories can be told through both 
+        words and code.
+      </p>
+
+      <div style="margin-top: 30px;">
+        <a href="#projects" style="padding: 10px 20px; border: 2px solid #fff; border-radius: 30px; color: #fff; text-decoration: none; margin-right: 15px; transition: 0.3s;">View My Work</a>
+        <a href="#contact" style="padding: 10px 20px; border: 2px solid #fff; border-radius: 30px; color: #fff; text-decoration: none; transition: 0.3s;">Contact Me</a>
       </div>
     </div>
-  </section>
+
+    <!-- Right Profile Image -->
+    <div style="flex: 1; min-width: 320px; text-align: center;">
+      <img src="profile.jpg" alt="Pranathi" style="width: 390px; height: 400px; border-radius: 50%; border: 5px solid rgba(255,255,255,0.3); box-shadow: 0 10px 25px rgba(0,0,0,0.3); object-fit: cover; transition: transform 0.3s;">
+    </div>
+
+  </div>
+</section>
 
   <!-- About Section -->
   <section id="about" class="about" style="background-color: rgb(245, 200, 218);">
@@ -1122,150 +1180,232 @@
           <img src="https://user-images.githubusercontent.com/113302094/211284885-f4291eef-88a6-48cb-a06e-28c3481a75b0.gif" alt="About Me">
         </div>
         <div class="about-text">
-          <h3>Profile Summary</h3>
-          <p>Eager to grow in the IT field by contributing to real-time projects and learning new technologies. Skilled in frontend and databases, currently exploring backend to become a full stack developer. Passionate about building practical, user-focused solutions.</p>
-            <p>
-             Want to know more about my skills and experience? Download my resume below.
-            </p>
-            <a href="PranathiVadapalli.pdf" class="btn-download" download>📄 Download Resume</a>
+          <p>Passionate about IT and eager to contribute to real-time projects while learning new technologies. Skilled in frontend and databases, currently exploring backend to become a full stack developer.
+Creator of “Unlock Yourself with Tech” — a YouTube channel where I share AI tools, coding tutorials, and tech insights to make technology simple and accessible.
+</p>
+<a href="https://www.youtube.com/@unlockyourselfwithtech" target="_blank" class="btn-download">🎥 Visit My Channel</a>
+</p>
+         <p style="
+  font-size: 1rem;
+  color: #0e0d0d;
+  text-align: left;
+  margin: 20px 0;
+  animation: fadeIn 2s ease-in-out;
+">
+  ✍️ View my resume below 👇
+</p>
+<a href="Pranathi resume.pdf" class="btn-download" target="_blank">📄 View Resume</a>
+
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="skills"  style="background-color: rgb(245, 200, 218);">
-    <div class="container">
-      <div class="section-title">
-        <h2>My <span>Skills</span></h2>
-      </div>
-      <div class="skills-content">
-        <h3>Technical Skills</h3>
-        <p>Here are the technologies I'm proficient with:</p>
-        
-        <div class="skills-grid">
-          <div class="skill-item">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-            <span>Python</span>
-          </div>
-          <div class="skill-item">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
-            <span>HTML</span>
-          </div>
-          <div class="skill-item">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
-            <span>CSS</span>
-          </div>
-          <div class="skill-item">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
-            <span>JavaScript</span>
-          </div>
-          <div class="skill-item">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
-            <span>React.js</span>
-          </div>
-          <div class="skill-item">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
-            <span>MongoDB</span>
-          </div>
-          <div class="skill-item">
-  <img src="https://img.icons8.com/ios-filled/100/000000/database.png" alt="SQL">
-  <span>SQL</span>
-</div>
-        </div>
-        
-        <h3 class="soft-skills-title">Soft Skills</h3>
-        <div class="soft-skills">
-          <div class="soft-skill-item">Communication</div>
-          <div class="soft-skill-item">Problem Solving</div>
-          <div class="soft-skill-item">Teamwork</div>
-          <div class="soft-skill-item">Time Management</div>
-          <div class="soft-skill-item">Adaptability</div>
-          <div class="soft-skill-item">Critical Thinking</div>
-        </div>
-      </div>
-    </div>
-  </section>
+<section id="skills" style="background: linear-gradient(135deg, #e0f7fa, #fce4ec); padding: 90px 0; color: #333;">
+  <div class="container" style="text-align: center; max-width: 1200px; margin: auto;">
+    <h2 style="font-size: 2.5rem; font-weight: 700; color: #0d47a1; margin-bottom: 20px;">
+      💡 My <span style="color:#e91e63;">Skills</span>
+    </h2>
+    <p style="max-width: 700px; margin: 0 auto 50px; color: #444; font-size: 1.1rem;">
+      A blend of creativity and technology — I build interactive web experiences, automate workflows, and experiment with AI tools.
+    </p>
 
-  <!-- Education Section -->
-  <section id="education"  style="background-color:rgb(245, 200, 218);">
-    <div class="container">
-      <div class="section-title">
-        <h2>My <span>Education</span></h2>
+    <div class="skills-grid" style="
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 35px;
+      justify-items: center;
+    ">
+      <!-- Skill Card -->
+      <div class="skill-card" style="background: linear-gradient(135deg, #ffffff, #f8faff); border-radius: 16px; padding: 25px; width: 150px; text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="60">
+        <h4 style="margin-top: 15px; color:#1565c0;">Python</h4>
       </div>
-      <div class="education-timeline">
-        <div class="education-item">
-          <div class="education-content">
-            <h4>B.Tech, CIC</h4>
-            <p>SASI Institute of Technology and Engineering, Tadepalligudem</p>
-            <p class="year">2022-2026 | CGPA: 8.3</p>
-          </div>
-        </div>
-        <div class="education-item">
-          <div class="education-content">
-            <h4>Intermediate, MPC</h4>
-            <p>Pragati Junior College, Tanuku</p>
-            <p class="year">2020-2022 | Percentage: 87%</p>
-          </div>
-        </div>
-        <div class="education-item">
-          <div class="education-content">
-            <h4>SSC</h4>
-            <p>GEMS English Medium School, Attili</p>
-            <p class="year">2020 | Percentage: 83%</p>
-          </div>
-        </div>
+
+      <div class="skill-card" style="background: linear-gradient(135deg, #fffde7, #fff9c4); border-radius: 16px; padding: 25px; width: 150px; text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" width="60">
+        <h4 style="margin-top: 15px; color:#ef6c00;">HTML</h4>
       </div>
+
+      <div class="skill-card" style="background: linear-gradient(135deg, #e1f5fe, #bbe0f2); border-radius: 16px; padding: 25px; width: 150px; text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" width="60">
+        <h4 style="margin-top: 15px; color:#0288d1;">CSS</h4>
+      </div>
+
+      <div class="skill-card" style="background: linear-gradient(135deg, #fff3e0, #ffe0b2); border-radius: 16px; padding: 25px; width: 150px; text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="60">
+        <h4 style="margin-top: 15px; color:#f9a825;">JavaScript</h4>
+      </div>
+
+      <div class="skill-card" style="background: linear-gradient(135deg, #e3f2fd, #d0e6f8); border-radius: 16px; padding: 25px; width: 150px; text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="60">
+        <h4 style="margin-top: 15px; color:#3771fa;">React.js</h4>
+      </div>
+
+      <div class="skill-card" style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 16px; padding: 25px; width: 150px; text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="60">
+        <h4 style="margin-top: 15px; color:#2e7d32;">MongoDB</h4>
+      </div>
+
+      <div class="skill-card" style="background: linear-gradient(135deg, #e8eaf6, #c5cae9); border-radius: 16px; padding: 25px; width: 150px; text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
+        <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" alt="SQL" width="60">
+        <h4 style="margin-top: 15px; color:#283593;">SQL</h4>
+      </div>
+
+      <div class="skill-card" style="background: linear-gradient(135deg, #f3e5f5, #e1bee7); border-radius: 16px; padding: 25px; width: 150px; text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" alt="Streamlit" width="60">
+        <h4 style="margin-top: 15px; color:#8e24aa;">Streamlit</h4>
+      </div>
+
+      <div class="skill-card" style="background: linear-gradient(135deg, #ede7f6, #d1c4e9); border-radius: 16px; padding: 25px; width: 150px; text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
+        <img src="https://cdn-icons-png.flaticon.com/512/3037/3037719.png" alt="Prompt Engineering" width="60">
+        <h4 style="margin-top: 15px; color:#4527a0;">Prompt Engineering</h4>
+      </div>
+
+      <div class="skill-card" style="background: linear-gradient(135deg, #fce4ec, #f8bbd0); border-radius: 16px; padding: 25px; width: 150px; text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712101.png" alt="AI Tools" width="60">
+        <h4 style="margin-top: 15px; color:#ad1457;">AI Tools</h4>
+      </div>
+
+       <div class="skill-card" style="background: linear-gradient(135deg, #f5f5f5, #eceff1); border-radius: 16px; padding: 25px; width: 150px; text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,0.1); transition: all 0.4s ease; cursor: pointer;">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="60">
+        <h4 style="margin-top: 15px; color:#d84315;">Git (Version Control)</h4>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
 
-  <!-- Projects Section -->
-  <section id="projects" class="projects" style="background-color:rgb(245, 200, 218);">
-    <div class="container">
-      <div class="section-title">
-        <h2>My <span>Projects</span></h2>
+
+ <!-- Education Section -->
+<section id="education" style="
+  background: linear-gradient(135deg, #f8bbd0, #bbdefb);
+  padding: 70px 0;
+  font-family: 'Poppins', sans-serif;
+">
+  <div class="container" style="max-width: 900px; margin: auto;">
+    <h2 style="text-align: center; font-size: 2.5rem; color: #0d47a1; margin-bottom: 50px;">
+      My <span style="color:#e91e63;">Education</span>
+    </h2>
+
+    <div class="timeline" style="position: relative; margin-left: 20px; padding-left: 25px; border-left: 4px solid #e91e63;">
+      
+      <!-- B.Tech -->
+      <div class="timeline-item" style="margin-bottom: 40px; position: relative;">
+        <div class="timeline-dot" style="width: 18px; height: 18px; background: #e91e63; border-radius: 50%; position: absolute; left: -33px; top: 5px;"></div>
+        <div class="timeline-content" style="
+          background: rgba(255,255,255,0.7);
+          backdrop-filter: blur(10px);
+          border-radius: 15px;
+          padding: 20px 25px;
+          box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+          transition: all 0.3s ease;
+        ">
+          <h3 style="color: #0d47a1;">🎓 B.Tech, CIC</h3>
+          <p style="color: #333; margin: 6px 0;">SASI Institute of Technology and Engineering, Tadepalligudem</p>
+          <p style="color: #e91e63; font-weight: 600;">2022 - 2026 | CGPA: 8.3</p>
+        </div>
       </div>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-img">
-            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Portfolio Website">
-          </div>
-          <div class="project-info">
-            <h3>College GateWay Management Website</h3>
-            <p>Personal portfolio built with HTML, CSS, and JavaScript showcasing my skills and projects.</p>
-            <div class="project-links">
-              <a href=" https://pranu5612.github.io/GateWayMgmtWebsite/" class="btn" target="_blank">View Project</a>
-            </div>
-          </div>
+
+      <!-- Intermediate -->
+      <div class="timeline-item" style="margin-bottom: 40px; position: relative;">
+        <div class="timeline-dot" style="width: 18px; height: 18px; background: #2196f3; border-radius: 50%; position: absolute; left: -33px; top: 5px;"></div>
+        <div class="timeline-content" style="
+          background: rgba(255,255,255,0.7);
+          backdrop-filter: blur(10px);
+          border-radius: 15px;
+          padding: 20px 25px;
+          box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+          transition: all 0.3s ease;
+        ">
+          <h3 style="color: #0d47a1;">🏫 Intermediate, MPC</h3>
+          <p style="color: #333; margin: 6px 0;">Pragati Junior College, Tanuku</p>
+          <p style="color: #e91e63; font-weight: 600;">2020 - 2022 | 87%</p>
         </div>
-        <div class="project-card">
-          <div class="project-img">
-            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Landing Page">
-          </div>
-          <div class="project-info">
-            <h3>Landing Page</h3>
-            <p>Responsive landing page built with HTML, CSS, and JavaScript for a modern web experience.</p>
-            <div class="project-links">
-              <a href="https://pranu5612.github.io/Task1LandingPage/" class="btn" target="_blank">View Project</a>
-            </div>
-          </div>
+      </div>
+
+      <!-- SSC -->
+      <div class="timeline-item" style="position: relative;">
+        <div class="timeline-dot" style="width: 18px; height: 18px; background: #9c27b0; border-radius: 50%; position: absolute; left: -33px; top: 5px;"></div>
+        <div class="timeline-content" style="
+          background: rgba(255,255,255,0.7);
+          backdrop-filter: blur(10px);
+          border-radius: 15px;
+          padding: 20px 25px;
+          box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+          transition: all 0.3s ease;
+        ">
+          <h3 style="color: #0d47a1;">📘 SSC</h3>
+          <p style="color: #333; margin: 6px 0;">GEMS English Medium School, Attili</p>
+          <p style="color: #e91e63; font-weight: 600;">2020 | 83%</p>
         </div>
-        <div class="project-card">
-          <div class="project-img">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Temperature Converter">
-          </div>
-          <div class="project-info">
-            <h3>Temperature Converter</h3>
-            <p>Interactive temperature converter tool built with HTML, CSS, and JavaScript.</p>
-            <div class="project-links">
-              <a href="https://pranu5612.github.io/Task3TemperatureConverter/" class="btn" target="_blank">View Project</a>
-            </div>
-          </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+ <section id="projects">
+  <h2>My Projects</h2>
+
+  <div class="projects-container">
+
+    <!-- Project 1 -->
+    <div class="project-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlT4j3LBomsH8sNedj_Fc5yKjOdAtpkVfnjA&s" alt="Gateway Website">
+      <div class="project-content">
+        <h3>College Gateway Management Website</h3>
+        <p>Full-stack web app with secure appointment scheduling and responsive UI.</p>
+        <div class="tech-stack">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
         </div>
+        <a href="https://pranu5612.github.io/GateWayMgmtWebsite/" class="btn click">Click Here</a>
       </div>
     </div>
-  </section>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <img src="https://www.shutterstock.com/image-vector/book-your-doctor-online-patient-600nw-1776815561.jpg" alt="Online Doctor Appointment System">
+      <div class="project-content">
+        <h3>Online Doctor Appointment</h3>
+        <p>Web system to manage entry/exit of students & staff with interactive UI.</p>
+        <div class="tech-stack">
+          <span>JavaScript</span>
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>Node.js</span>
+        </div>
+        <a href="https://pranu5612.github.io/smartinternzproject/" class="btn click">Click Here</a>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card">
+      <img src="https://www.clio.com/wp-content/uploads/2018/06/Blog-Clio-File-750x422.png" 
+alt="eCourts Cause List Parser">
+      <div class="project-content">
+        <h3>eCourts Cause List Parser</h3>
+        <p>Parses eCourts HTML lists and generates structured PDFs (English & Telugu).</p>
+        <div class="tech-stack">
+          <span>Python</span>
+          <span>Streamlit</span>
+          <span>FPDF</span>
+        </div>
+        <a href="https://github.com/pranu5612/ecourts_scraper" target="_blank" class="btn click">Click Here</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
 
   <!-- Achievements Section -->
 <section id="achievements" class="achievements" style="background-color:rgb(245, 200, 218);">
@@ -1285,23 +1425,6 @@
         <h3>Inspira 2.0 Hackathon</h3>
         <p>Participation in innovation-driven hackathon organized by SITE & NITAP</p>
         <a href="Hakathonforgeinspira.png" class="btn" target="_blank">View Certificate</a>
-      </div>
-    </div>
-
-    <!-- Workshops -->
-    <h2 style="text-align:center; margin:40px 0 20px;">📚 Workshops</h2>
-    <div class="achievements-grid">
-      <div class="certificate-card">
-        <h3>Generative AI Workshop</h3>
-        <a href="GenAIworkshop.png" class="btn" target="_blank">View Certificate</a>
-      </div>
-      <div class="certificate-card">
-        <h3>AWS Workshop</h3>
-        <a href="AWSworkshop.png" class="btn" target="_blank">View Certificate</a>
-      </div>
-      <div class="certificate-card">
-        <h3>IOT & Machine Learning Workshop</h3>
-        <a href="iot workshop certificate.jpg" class="btn" target="_blank">View Certificate</a>
       </div>
     </div>
 
@@ -1345,82 +1468,69 @@
 
 
 <!-- Contact Section -->
-<section id="contact" class="contact" style="background-color: rgb(245, 200, 218); padding: 60px 0;">
-  <div class="container">
-    <div class="section-title" style="text-align: center; margin-bottom: 40px;">
-      <h2 style="font-size: 32px; color: #333;">Contact <span style="color: #1940ed;">Me</span></h2>
-    </div>
+<section id="contact" style="background: linear-gradient(135deg, #fce4ec, #e3f2fd); padding: 80px 0; font-family: 'Poppins', sans-serif;">
+  <div class="container" style="max-width: 1100px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
+    
+    <!-- Left: Contact Info -->
+    <div style="flex: 1; min-width: 320px; background: #ffffff; padding: 40px 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+      <h2 style="font-size: 2rem; color: #0d47a1; margin-bottom: 20px; text-align: center;">
+        📬 Contact <span style="color: #e91e63;">Me</span>
+      </h2>
+      <p style="text-align: center; color: #555; margin-bottom: 30px;">
+        Feel free to reach out for collaborations, content projects, or exciting opportunities!
+      </p>
 
-    <!-- YouTube Channel Section -->
-<section id="youtube" style="background:rgb(245, 200, 218) padding:60px 0;">
-  <div class="container" style="text-align:center;">
-    <h2 style="font-size:2rem; margin-bottom:20px;">
-      📺 Join Our <span style="color:#014e5a;">YouTube Channel</span>
-    </h2>
-    <p style="max-width:600px; margin:0 auto 30px; color:#555;">
-      Subscribe for AI tools, project walkthroughs, and tech tips.
-    </p>
-    <a href="https://www.youtube.com/@unlockyourselfwithtech" 
-   target="_blank" 
-   class="btn">
-   👉 Visit & Subscribe
-</a>
-  </div>
-</section>
-
-
-    <div class="contact-container">
-      <!-- Contact Info -->
-      <div class="contact-info">
-        <h3 style="color: #333;">Get in Touch</h3>
-        <p style="margin-bottom: 20px;">
-          Feel free to reach out for collaborations! I’m open to discussing new projects or ideas.
-        </p>
-
-        <div class="contact-details">
-          <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <p>vadapallipranathi@gmail.com</p>
-          </div>
-          <div class="contact-item">
-            <i class="fas fa-phone"></i>
-            <p>+91 9347926869</p>
-          </div>
-          <div class="contact-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <p>Tanuku, Andhra Pradesh, India</p>
-          </div>
+      <div style="display: flex; flex-direction: column; gap: 18px; color: #333;">
+        <div style="display: flex; align-items: center; gap: 15px;">
+          <i class="fas fa-envelope" style="font-size: 20px; color: #d81b60;"></i>
+          <p style="margin: 0;">vadapallipranathi@gmail.com</p>
         </div>
 
-        <div class="contact-social" style="text-align: center; margin-top: 30px;">
-          <a href="https://github.com/pranu5612" target="_blank" title="GitHub" style="margin: 0 12px; font-size: 24px; color: #333;">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://linkedin.com/in/pranathi-vadapalli-9173132ba" target="_blank" title="LinkedIn" style="margin: 0 12px; font-size: 24px; color: #0077b5;">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="https://leetcode.com/u/pranu56" target="_blank" title="LeetCode" style="margin: 0 12px; font-size: 24px; color: #F89F1B;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="26" height="26" fill="currentColor">
-              <path d="M22.07 24.02l-7.82-7.82 2.84-2.84 10.66 10.66-10.66 10.66-2.84-2.84 7.82-7.82z" fill="#F89F1B"/>
-              <path d="M33.88 6.6l-3.53 3.53A14.03 14.03 0 0129.8 38l3.53 3.53A18.03 18.03 0 0033.88 6.6z" fill="#111"/>
-            </svg>
-          </a>
+        <div style="display: flex; align-items: center; gap: 15px;">
+          <i class="fas fa-phone" style="font-size: 20px; color: #0288d1;"></i>
+          <p style="margin: 0;">+91 9347926869</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 15px;">
+          <i class="fas fa-map-marker-alt" style="font-size: 20px; color: #4caf50;"></i>
+          <p style="margin: 0;">Tanuku, Andhra Pradesh, India</p>
         </div>
       </div>
 
-      <!-- Message Form -->
-      <div class="message-form">
-        <h3 style="color: #0e0d0d;">Message Me</h3>
-        <form action="https://formspree.io/f/yourformid" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <textarea name="message" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
+      <!-- Social Links -->
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="https://github.com/pranu5612" target="_blank" title="GitHub" style="margin: 0 12px; font-size: 28px; color: #24292e;">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/pranathi-vadapalli-9173132ba" target="_blank" title="LinkedIn" style="margin: 0 12px; font-size: 28px; color: #0077b5;">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://leetcode.com/u/pranu56" target="_blank" title="LeetCode" style="margin: 0 12px; font-size: 28px; color: #f89f1b;">
+          <i class="fas fa-code"></i>
+        </a>
       </div>
+    </div>
+
+    <!-- Right: Message Form -->
+    <div style="flex: 1; min-width: 320px; background: #ffffff; padding: 40px 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+      <h3 style="font-size: 1.8rem; color: #0d47a1; margin-bottom: 25px; text-align: center;">
+        💬 Message Me
+      </h3>
+      <form action="https://formspree.io/f/yourformid" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+        <input type="text" name="name" placeholder="Your Name" required style="padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem;">
+        <input type="email" name="email" placeholder="Your Email" required style="padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem;">
+        <textarea name="message" placeholder="Your Message" required style="padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem; min-height: 120px;"></textarea>
+        <button type="submit" style="padding: 12px; background: linear-gradient(135deg, #0d47a1, #e91e63); color: white; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; transition: 0.3s;">
+          Send Message
+        </button>
+      </form>
     </div>
   </div>
 </section>
+
+<!-- Add this to your <head> for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
   <!-- Footer -->
   <!-- <footer>
@@ -1448,6 +1558,52 @@
         navLinks.classList.remove('active');
       });
     });
+
+
+const roles = [
+  "Full Stack Developer",
+  "Python Programmer",
+  "Content Creator"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let currentRole = "";
+let isDeleting = false;
+
+function typeEffect() {
+  const typewriter = document.getElementById("typewriter");
+
+  if (!typewriter) return; // safety check
+
+  const fullText = roles[roleIndex];
+
+  if (isDeleting) {
+    currentRole = fullText.substring(0, charIndex--);
+  } else {
+    currentRole = fullText.substring(0, charIndex++);
+  }
+
+  typewriter.textContent = currentRole;
+
+  let typeSpeed = isDeleting ? 60 : 100;
+
+  if (!isDeleting && charIndex === fullText.length) {
+    typeSpeed = 150;
+    isDeleting = true;
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    roleIndex = (roleIndex + 1) % roles.length;
+    typeSpeed = 90;
+  }
+
+  setTimeout(typeEffect, typeSpeed);
+}
+
+document.addEventListener("DOMContentLoaded", typeEffect);
+
+
+
 
     // Sticky Header
     window.addEventListener('scroll', () => {
@@ -1501,7 +1657,19 @@
     if (skillsSection) {
       observer.observe(skillsSection);
     }
+
+
+  const skillCards = document.querySelectorAll('.skill-card');
+  skillCards.forEach(card => {
+    card.addEventListener('touchstart', () => {
+      card.style.transform = 'translateY(-10px) scale(1.05)';
+      setTimeout(() => {
+        card.style.transform = 'translateY(0) scale(1)';
+      }, 300);
+    });
+  });
+
+
   </script>
 </body>
 </html>
-
