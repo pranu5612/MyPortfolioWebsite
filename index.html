@@ -142,12 +142,117 @@
     .about-card p{color:var(--muted);line-height:1.6}
     .about-actions{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
 
-    /* ===== Skills Grid ===== */
-    .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px;align-items:stretch}
-    .skill-card{background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));border-radius:12px;padding:18px;text-align:center;border:1px solid rgba(255,255,255,0.03);transition: transform var(--transition), box-shadow var(--transition)}
-    .skill-card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 20px 40px rgba(2,6,23,0.6)}
-    .skill-card img{width:56px;height:56px;object-fit:contain;margin:0 auto;display:block}
-    .skill-card h4{margin-top:12px;font-size:0.98rem;color:var(--white)}
+    /* ===== SKILLS SECTION ===== */
+#skills {
+  padding: 80px 20px;
+}
+
+#skills .section-title h2 {
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+}
+
+#skills .section-title span {
+  color: var(--accent-2);
+}
+
+#skills .section-subtitle {
+  max-width: 720px;
+  margin: 0 auto 50px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 24px;
+  max-width: 950px;
+  margin: auto;
+}
+
+/* Card */
+.skill-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 24px 16px;
+  text-align: center;
+  transition: all 0.35s ease;
+  backdrop-filter: blur(10px);
+}
+
+.skill-card img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 12px;
+}
+
+.skill-card h4 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--white);
+}
+.skills-left h2 {
+  font-size: 2.6rem;
+  line-height: 1.1;
+}
+
+.skills-left p {
+  max-width: 420px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.skills-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--white);
+  letter-spacing: 0.5px;
+}
+.programming-grid .skill-card {
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.02)
+  );
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.skill-card {
+  transition: all 0.35s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+.skill-card img {
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.4));
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 26px;
+}
+
+
+/* Hover Effect */
+.skill-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* Mobile tweak */
+@media (max-width: 500px) {
+  .skill-card img {
+    width: 42px;
+    height: 42px;
+  }
+}
 
     /* ===== Projects ===== */
     .projects-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
@@ -322,8 +427,8 @@
       <nav class="nav-links" id="navLinks">
         <a href="#hero" class="active">Home</a>
         <a href="#about">About</a>
-        <a href="#skills">Skills</a>
         <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#achievements">Achievements</a>
         <a href="#contact">Contact</a>
@@ -394,7 +499,7 @@
 
             <div class="about-actions">
               <a class="btn btn-primary" href="https://www.youtube.com/@unlockyourselfwithtech" target="_blank"><i class="fa-brands fa-youtube"></i> Visit My Channel</a>
-              <a class="btn btn-ghost" href="VPranathiResume.pdf" target="_blank"><i class="fa-regular fa-file-lines"></i> View Resume</a>
+              <a class="btn btn-ghost" href="Pranathi Resume (1).pdf" target="_blank"><i class="fa-regular fa-file-lines"></i> View Resume</a>
             </div>
           </div>
 
@@ -405,60 +510,6 @@
 <div class="profile-role">Obsessed with improving, <br> excited to build.</div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" aria-label="Skills">
-      <div class="container">
-        <div class="section-title">
-          <h2> My Skills</span></h2>
-          <p class="section-subtitle">A blend of creativity and technology —  Turning ideas into reality using modern tech and continuous learning.</p>
-        </div>
-
-        <div class="skills-grid">
-          <!-- Keep your skill cards and images intact -->
-          <div class="skill-card">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-            <h4>Python</h4>
-          </div>
-          <div class="skill-card">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
-            <h4>HTML</h4>
-          </div>
-          <div class="skill-card">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
-            <h4>CSS</h4>
-          </div>
-          <div class="skill-card">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
-            <h4>JavaScript</h4>
-          </div>
-          <div class="skill-card">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
-            <h4>React.js</h4>
-          </div>
-          <div class="skill-card">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL">
-            <h4>SQL</h4>
-          </div>
-          <div class="skill-card">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" alt="Streamlit">
-            <h4>Streamlit</h4>
-          </div>
-          <div class="skill-card">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
-            <h4>MongoDB</h4>
-          </div>
-          <div class="skill-card">
-            <img src="https://cdn-icons-png.flaticon.com/512/4712/4712101.png" alt="AI Tools">
-            <h4>AI Tools</h4>
-          </div>
-          <div class="skill-card">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
-            <h4>Git (Version Control)</h4>
           </div>
         </div>
       </div>
@@ -477,7 +528,7 @@
     <h3>🎓 B.Tech, CSE (IoT & CS)</h3>
     <h4>Sasi Institute of Technology and Engineering, Tadepalligudem</h4>
     <p>Specialized in IoT, Cybersecurity & Blockchain concepts.</p>
-    <p class="muted">2022 - 2026 | CGPA: 8.3</p>
+    <p class="muted">2022 - 2026 | CGPA: 8.47</p>
   </div>
 
   <div class="timeline-item">
@@ -497,6 +548,99 @@
         </div>
       </div>
     </section>
+
+   <!-- SKILLS SECTION -->
+<section id="skills" aria-label="Skills">
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="section-title">
+      <h2>Technical Skills</h2>
+      <p class="section-subtitle">
+        Turning ideas into reality using modern tech and continuous learning.
+      </p>
+    </div>
+
+    <!-- PROGRAMMING -->
+    <div class="skills-label">Programming</div>
+    <div class="skills-grid programming-grid">
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Core Python">
+        <h4>Core Python</h4>
+      </div>
+
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Core Java">
+        <h4>Core Java</h4>
+      </div>
+
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C Basics">
+        <h4>C (Basics)</h4>
+      </div>
+    </div>
+
+    <!-- TOOLS & TECHNOLOGIES -->
+    <div class="skills-label" style="margin-top:40px">
+      Tools & Technologies
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+        <h4>HTML</h4>
+      </div>
+
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+        <h4>CSS</h4>
+      </div>
+
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+        <h4>JavaScript</h4>
+      </div>
+
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+        <h4>React.js</h4>
+      </div>
+
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+        <h4>MySQL</h4>
+      </div>
+
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+        <h4>MongoDB</h4>
+      </div>
+
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" alt="Streamlit">
+        <h4>Streamlit</h4>
+      </div>
+
+      <div class="skill-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712101.png" alt="AI Tools">
+        <h4>AI Tools</h4>
+      </div>
+
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+        <h4>Git (Version Control)</h4>
+      </div>
+
+      <div class="skill-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/900/900782.png" alt="Networking">
+        <h4>Networking</h4>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+    
 
     <!-- PROJECTS -->
     <section id="projects" aria-label="Projects">
@@ -663,15 +807,42 @@
           </div>
 
           <div class="contact-card">
-            <h3 style="color:var(--white);margin-bottom:10px">💬 Message Me</h3>
-            <form action="https://formspree.io/f/yourformid" method="POST" id="contactForm" style="display:flex;flex-direction:column;gap:10px">
-              <input name="name" placeholder="Your Name" required style="padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--white)">
-              <input name="email" type="email" placeholder="Your Email" required style="padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--white)">
-              <textarea name="message" placeholder="Your Message" required style="padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--white);min-height:120px"></textarea>
-              <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
-            <div id="formNotice" style="margin-top:10px;color:var(--muted);font-size:0.9rem"></div>
-          </div>
+  <h3 style="color:var(--white);margin-bottom:10px">💬 Message Me</h3>
+
+  <form 
+    action="https://formspree.io/f/xzdapdpr" 
+    method="POST" 
+    id="contactForm"
+    style="display:flex;flex-direction:column;gap:10px"
+  >
+    <input 
+      name="name" 
+      placeholder="Your Name" 
+      required 
+      style="padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--white)"
+    >
+
+    <input 
+      name="email" 
+      type="email" 
+      placeholder="Your Email" 
+      required 
+      style="padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--white)"
+    >
+
+    <textarea 
+      name="message" 
+      placeholder="Your Message" 
+      required 
+      style="padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--white);min-height:120px"
+    ></textarea>
+
+    <button type="submit" class="btn btn-primary">Send Message</button>
+  </form>
+
+  <div id="formNotice" style="margin-top:10px;color:var(--muted);font-size:0.9rem"></div>
+</div>
+
         </div>
       </div>
     </section>
@@ -734,81 +905,107 @@ tabs.forEach(tab => {
       header.classList.toggle('scrolled', window.scrollY > 40);
     });
 
-    // Active link highlighting by section
-    const sections = document.querySelectorAll('section[id]');
-    function onScroll() {
-      const scrollPos = window.scrollY + (window.innerHeight * 0.22);
-      sections.forEach(sec => {
-        const top = sec.offsetTop;
-        const bottom = top + sec.offsetHeight;
-        const id = sec.id;
-        const link = document.querySelector('.nav-links a[href="#' + id + '"]');
-        if (!link) return;
-        if (scrollPos >= top && scrollPos < bottom) {
-          document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
-          link.classList.add('active');
-        }
-      });
+const sections = document.querySelectorAll('section[id]');
+
+function onScroll() {
+  const scrollPos = window.scrollY + window.innerHeight * 0.22;
+
+  sections.forEach(sec => {
+    const top = sec.offsetTop;
+    const bottom = top + sec.offsetHeight;
+    const link = document.querySelector(`.nav-links a[href="#${sec.id}"]`);
+
+    if (!link) return;
+
+    if (scrollPos >= top && scrollPos < bottom) {
+      document.querySelectorAll('.nav-links a')
+        .forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
     }
-    window.addEventListener('scroll', onScroll);
-    window.addEventListener('load', onScroll);
+  });
+}
 
-    // Typewriter rotation for your roles
-    const roles = [
-      "Full Stack Developer",
-      "Frontend Designer",
-      "Tech Enthusiast"
-    ];
-    let roleIndex = 0, charIndex = 0, deleting = false;
-    const typeEl = document.getElementById('typewriter');
+window.addEventListener('scroll', onScroll);
+window.addEventListener('load', onScroll);
 
-    function typeLoop(){
-      const current = roles[roleIndex];
-      if(!deleting){
-        charIndex++;
-        typeEl.textContent = current.substring(0,charIndex);
+const roles = [
+  "Full Stack Developer",
+  "Frontend Designer",
+  "Tech Enthusiast"
+];
+
+let roleIndex = 0, charIndex = 0, deleting = false;
+const typeEl = document.getElementById('typewriter');
+
+function typeLoop() {
+  if (!typeEl) return;
+
+  const current = roles[roleIndex];
+
+  typeEl.textContent = deleting
+    ? current.substring(0, --charIndex)
+    : current.substring(0, ++charIndex);
+
+  let delay = deleting ? 50 : 110;
+
+  if (!deleting && charIndex === current.length) {
+    delay = 900;
+    deleting = true;
+  } 
+  else if (deleting && charIndex === 0) {
+    deleting = false;
+    roleIndex = (roleIndex + 1) % roles.length;
+    delay = 200;
+  }
+
+  setTimeout(typeLoop, delay);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(typeLoop, 400);
+});
+const profileCard = document.querySelector('.profile-card');
+
+if (profileCard && window.innerWidth > 820) {
+  profileCard.addEventListener('mousemove', e => {
+    const rect = profileCard.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+    profileCard.style.transform =
+      `perspective(900px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg)`;
+  });
+
+  profileCard.addEventListener('mouseleave', () => {
+    profileCard.style.transform = '';
+  });
+}
+const form = document.getElementById("contactForm");
+const notice = document.getElementById("formNotice");
+
+if (form && notice) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    notice.textContent = "Sending...";
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { "Accept": "application/json" }
+      });
+
+      if (response.ok) {
+        notice.textContent = "Message sent successfully! I will get back to you soon.";
+        form.reset();
       } else {
-        charIndex--;
-        typeEl.textContent = current.substring(0,charIndex);
+        notice.textContent = "Something went wrong. Please try again.";
       }
-
-      let delay = deleting ? 50 : 110;
-      if(!deleting && charIndex === current.length){
-        delay = 900;
-        deleting = true;
-      } else if(deleting && charIndex === 0){
-        deleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-        delay = 120;
-      }
-      setTimeout(typeLoop, delay);
+    } catch {
+      notice.textContent = "Network error. Please try later.";
     }
-    document.addEventListener('DOMContentLoaded', () => { setTimeout(typeLoop, 400); });
-
-    // Contact form basic feedback (Formspree)
-    const form = document.getElementById('contactForm');
-    const notice = document.getElementById('formNotice');
-    if(form){
-      form.addEventListener('submit', (e) => {
-        // Show temporary message and let the form submit normally to Formspree
-        notice.textContent = 'Sending...';
-        setTimeout(()=>{ notice.textContent = 'Message sent — thank you!'; }, 1200);
-      });
-    }
-
-    // Small touch interaction for profileCard tilt (desktop)
-    const profileCard = document.querySelector('.profile-card');
-    if(profileCard && window.innerWidth > 820){
-      profileCard.addEventListener('mousemove', (e) => {
-        const rect = profileCard.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width - 0.5;
-        const y = (e.clientY - rect.top) / rect.height - 0.5;
-        profileCard.style.transform = `perspective(900px) rotateY(${x * 6}deg) rotateX(${ -y * 6}deg) translateZ(0)`;
-      });
-      profileCard.addEventListener('mouseleave', ()=> profileCard.style.transform = '');
-    }
-  </script>
+  });
+}
+</script>
 </body>
 </html>
-
-
